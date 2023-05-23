@@ -1,0 +1,21 @@
+
+
+### test user endpoinst
+POST http://localhost:4000/api/register
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "test",
+    "email": "test@example.com"
+}
+
+### register incorrect user
+POST http://localhost:4000/api/register
+Content-Type: application/json
+
+{
+    "username": "aaa",
+    "password": "aaa",
+    "email": "aaa@example.com"
+}
