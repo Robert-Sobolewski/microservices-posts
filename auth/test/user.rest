@@ -19,3 +19,21 @@ Content-Type: application/json
     "password": "aaa",
     "email": "aaa@example.com"
 }
+
+### test login enpoint
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "test"
+}
+
+
+
+### test logout enpoint
+GET http://localhost:4000/api/logout
+
+
+### test isAuthenticated
+GET http://localhost:4000/api/isAuthenticated

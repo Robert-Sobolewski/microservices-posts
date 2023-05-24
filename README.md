@@ -11,3 +11,12 @@
     <li>Create comments microservice </li>
 
 </ol>
+
+## Configuration
+### 2. Authentication microservice
+<ol>
+<li>Create .env file</li>
+<li>Add PORT, DB_URL, SECRET_KEY, EXPIRATION_TIME</li>
+<li>Run npm install</li>
+<li>Run npm start</li>
+</ol>

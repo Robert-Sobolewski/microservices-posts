@@ -13,8 +13,14 @@ dotenv.config();
 
 const PORT = process.env.PORT || null;
 const DB_URL = process.env.DB_URL || null;
+const SECRET_KEY = process.env.SECRET_KEY || null;
+const EXPIRATION_TIME = process.env.EXPIRATION_TIME || null;
+
 if (!PORT) throw new Error("Port must be specified!!");
 if (!DB_URL) throw new Error("DB_URL must be specified!!");
+if (!SECRET_KEY) throw new Error("SECRET_KEY must be specified!!");
+if (!EXPIRATION_TIME) throw new Error("EXPIRATION_TIME must be specified!!");
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
@@ -25,13 +31,13 @@ app.use(passport.initialize());
 app.use(
   //   passport.session()
   session({
-    secret: "secret123",
+    secret: SECRET_KEY,
     resave: true,
     saveUninitialized: true,
   })
 );
 app.use(passport.session());
-// define passport serialize and deserialize methods
+
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
